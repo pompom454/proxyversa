@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "ProxyVersa",
+  "version": "1.0",
+  "description": "No more proxying.",
+  "permissions": [
+    "tabs"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
