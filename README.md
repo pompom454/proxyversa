@@ -12,3 +12,4 @@ Simply download the code by pressing the green "Code" button and pressing "Downl
 ```
 git https://github.com/pompom454/proxyversa.git
 ```
+After that, use Chrome dev tools (or just go to extensions) and load the extension.
