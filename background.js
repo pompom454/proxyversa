@@ -1,13 +1,17 @@
 const CLOSE_DELAY = 15000;
 const timers = {};
 
+function isBlank(tab) {
+  return !tab.url || tab.url === "about:blank";
+}
+
 function startTimer(tabId) {
   clearTimer(tabId);
 
   timers[tabId] = setTimeout(() => {
     chrome.tabs.get(tabId, (tab) => {
       if (chrome.runtime.lastError) return;
-      if (tab.url === "about:blank") {
+      if (isBlank(tab)) {
         chrome.tabs.remove(tabId);
       }
     });
@@ -21,23 +25,20 @@ function clearTimer(tabId) {
   }
 }
 
-// on tab created
 chrome.tabs.onCreated.addListener((tab) => {
-  if (tab.url === "about:blank") {
+  if (isBlank(tab)) {
     startTimer(tab.id);
   }
 });
 
-// on tab updated
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-  if (changeInfo.url === "about:blank" || tab.url === "about:blank") {
+  if (changeInfo.url === "about:blank" || isBlank(tab)) {
     startTimer(tabId);
   } else {
     clearTimer(tabId);
   }
 });
 
-// on tab removed
 chrome.tabs.onRemoved.addListener((tabId) => {
   clearTimer(tabId);
 });
