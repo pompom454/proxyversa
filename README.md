@@ -10,6 +10,6 @@ After noticing how the concept of "browser-in-a-browser" worked, I figured that 
 ## How do I install this?
 Simply download the code by pressing the green "Code" button and pressing "Download ZIP". Alternatively, use Git by copying the URL, pasting it into your command line, and then adding ".git" to the end of the URL. It should look like this:
 ```
-git https://github.com/pompom454/proxyversa.git
+git clone https://github.com/pompom454/proxyversa.git
 ```
 After that, use Chrome dev tools (or just go to extensions) and load the extension.
