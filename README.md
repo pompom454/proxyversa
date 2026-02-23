@@ -1,5 +1,5 @@
 # ProxyVersa
-This is a very simple way to prevent proxies and/or unblocker tools from being used. This is a Chrome extension to be used with Chromium-based browsers.
+This is a relatively simple (and easy-to-setup) way to prevent proxies and/or unblocker tools from being used. This is a Chrome extension to be used with Chromium-based browsers.
 
 ## How does it work?
 This simply tracks how long the user is on about:blank. The default value is 15000 ms (or 15 seconds) but you can change it inside the JavaScript file. After the value threshold has been passed, it will close that tab. No user should be on about:blank for that long.
